@@ -42,3 +42,6 @@
 # modules.xml
 # .idea/misc.xml 
 # *.ipr
+
+# Ignore database
+.idea/dataSources/*
