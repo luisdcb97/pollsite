@@ -1,0 +1,55 @@
+{% load static %}
+{% if json != "" %}
+    <meta name="viewport" content="width=device-width">
+    <script type="text/javascript">
+        const json = {{ json }};
+//        const json = '[{"text": "Antonio Louro - Lambe Cus", "children": [{"text": "José Teodoro - Teddy", "children": [{"text": "Luís Bernarda - Luizard", "children": []}, {"text": "Alexandra Velosa - Xana", "children": []}, {"text": "Ricardo Paiva", "children": []}]}, {"text": "Vitor Ferreira - Gay", "children": [{"text": "Ana Clara", "children": []}]}, {"text": "Alexandra Nogueira - Alex", "children": []}]}]';
+    </script>
+    <style>
+        .node{
+            width: 10rem;
+        }
+        .node p{
+            margin: 0 auto;
+            left: 0;
+            right: 0;
+        }
+        .Treant .leaf::after{
+            position: absolute;
+            content: '';
+            height: 0.2rem;
+            margin: 0 auto;
+            left: 0;
+            right: 0;
+            width: 85%;
+            background-color: orangered;
+        }
+
+        .Treant .ancestor::before{
+            position: absolute;
+            content: '';
+            height: 0.2rem;
+            margin: 0 auto;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 85%;
+            background-color: forestgreen;
+        }
+    </style>
+
+    <link rel="stylesheet" href="{% static 'angelsystem/treant-js-master/Treant.css' %}" type="text/css"/>
+    <link rel="stylesheet" href="{% static 'angelsystem/treant-js-master/examples/collapsable/collapsable.css' %}">
+    <link rel="stylesheet" href="{% static 'angelsystem/treant-js-master/vendor/perfect-scrollbar/perfect-scrollbar.css' %}">
+
+    <div id="tree-simple"> </div>
+
+    <script src="{% static 'angelsystem/treant-js-master/vendor/raphael.js' %}"></script>
+    <script src="{% static 'angelsystem/treant-js-master/Treant.js' %}"></script>
+    <script src="{% static 'angelsystem/treant-js-master/vendor/jquery.min.js' %}"></script>
+    <script src="{% static 'angelsystem/treant-js-master/vendor/jquery.easing.js' %}"></script>
+    <script src="{% static 'angelsystem/angel.js' %}"></script>
+
+{% else %}
+    No users to display.
+{% endif %}
